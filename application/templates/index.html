@@ -1,12 +1,13 @@
 <head>
     <title>Thanks But No</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script src="{{ url_for('static', filename='javascript/htmx.min.js') }}" defer></script>
 </head>
 
 <body>
-<h3>Logo</h3>
+<h3>Thanks But No.</h3>
 <main>
-    <h1>A fancy title</h1>
+    <h1>It's time to improve the way we learn, work and live.</h1>
     <section>
         <p>Gummies powder I love lollipop lemon drops marzipan I love muffin cupcake. Halvah cookie icing candy sweet roll topping carrot cake icing. Marshmallow toffee I love I love jelly I love pastry. Powder fruitcake gingerbread bear claw liquorice jelly-o. Bear claw gummi bears sugar plum jujubes toffee caramels bonbon lollipop. Shortbread oat cake I love halvah gummi bears cake. Cake dragée sweet apple pie sweet jelly-o fruitcake. Fruitcake lemon drops gingerbread chocolate cake cheesecake shortbread candy bear claw. Carrot cake tart danish cheesecake donut pie sesame snaps.
         </p>
@@ -21,9 +22,16 @@
     </section>
 </main>
 
+<!-- TODO: Replace form with WTForms -->
+
+
+
 <section class="subscribe">
-    <input type="email" placeholder="Your email"/>
-    <input type="button" value="Join the party"/>
+    <form class="" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.email(autocomplete="off", placeholder="Your email") }}
+        {{ form.submit(class="") }}
+    </form>
 </section>
 
 <footer>
