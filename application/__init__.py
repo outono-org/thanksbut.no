@@ -32,17 +32,27 @@ class SubscribeForm(FlaskForm):
 # Start of Views
 
 
-@app.route("/", methods=['GET', 'POST'])
+db = Config.mongo.db
+
+
+@app.get("/")
 def home():
+    form = SubscribeForm()
 
-    db = Config.mongo.db
+    return render_template('index.html', form=form)
 
+
+@app.post("/subscribe")
+def subscribe():
     form = SubscribeForm()
     email = form.email.data
 
     if form.validate_on_submit():
         db.subscribers.insert_one(
             {"email": email})
-        # TODO: Create module to replace form.
+        return thankyou()
 
-    return render_template('index.html', form=form, email=email)
+
+@app.get("/thankyou")
+def thankyou():
+    return render_template('fragments/thankyou.html')

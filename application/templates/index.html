@@ -1,7 +1,10 @@
 <head>
     <title>Thanks But No</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
-    <script src="{{ url_for('static', filename='javascript/htmx.min.js') }}" defer></script>
+    <script src="{{url_for('static', filename='javascript/htmx.min.js')}}"></script>
 </head>
 
 <body>
@@ -9,25 +12,20 @@
 <main>
     <h1>It's time to improve the way we learn, work and live.</h1>
     <section>
-        <p>Gummies powder I love lollipop lemon drops marzipan I love muffin cupcake. Halvah cookie icing candy sweet roll topping carrot cake icing. Marshmallow toffee I love I love jelly I love pastry. Powder fruitcake gingerbread bear claw liquorice jelly-o. Bear claw gummi bears sugar plum jujubes toffee caramels bonbon lollipop. Shortbread oat cake I love halvah gummi bears cake. Cake dragée sweet apple pie sweet jelly-o fruitcake. Fruitcake lemon drops gingerbread chocolate cake cheesecake shortbread candy bear claw. Carrot cake tart danish cheesecake donut pie sesame snaps.
-        </p>
-
+        <p>Today’s world is truly amazing. During the last century life expectancy has gone from 32 to 72 years old, the percentage of the population living under extreme poverty went from nearly 70% down to 10% and literacy increased from only 20% up to 86%. However, we still have a lot to improve.</p>
         <p>
-            Lemon drops wafer pie I love marzipan. I love croissant gummi bears fruitcake jelly beans. Chupa chups caramels wafer gummi bears gummi bears. Tiramisu sesame snaps fruitcake gummies cookie I love. Liquorice marzipan I love I love muffin bear claw pie. Lollipop soufflé cupcake cotton candy sugar plum. Bear claw liquorice tiramisu I love marshmallow.
+            Yes, we are extremely grateful for the achievements of our ancestors, but gratitude does not imply passivity or accepting things as they are. Taking things for granted might lead us to forget that our existence is defined but its impermanence. We aren’t playing a single game, but rather an infinite set of constantly changing games. 
         </p>
-
         <p>
-            Cookie dragée I love bear claw cheesecake toffee bonbon shortbread. Jelly dessert pie sweet donut. Jelly beans cookie tart cotton candy pudding jelly beans sweet croissant dessert. Soufflé fruitcake tootsie roll I love liquorice bonbon. I love cake oat cake jujubes apple pie I love cotton candy tart. Topping biscuit gummi bears I love halvah candy canes I love jujubes. Oat cake cake I love danish muffin tart sweet danish soufflé. Ice cream I love ice cream caramels danish. Croissant cookie wafer tiramisu I love jelly beans chocolate cake jelly beans cookie.
+            TBN is a community for people who embrace change and want to keep on building the games that dictate our way of living. 
         </p>
     </section>
 </main>
 
 <!-- TODO: Replace form with WTForms -->
 
-
-
 <section class="subscribe">
-    <form class="" method="POST">
+    <form id="subscribe" class="fade-me-out" method="POST" hx-post="/subscribe" hx-target="#subscribe" hx-swap="outerHTML swap:1s">
         {{ form.hidden_tag() }}
         {{ form.email(autocomplete="off", placeholder="Your email") }}
         {{ form.submit(class="") }}
@@ -35,6 +33,6 @@
 </section>
 
 <footer>
-    Here will be our social media links.
+    <a href="">@thanksbutnooooo on Twitter</a>
 </footer>
 </body>
