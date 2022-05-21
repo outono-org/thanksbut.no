@@ -46,7 +46,3 @@ def home():
         # TODO: Create module to replace form.
 
     return render_template('index.html', form=form, email=email)
-
-
-if __name__ == '__main__':
-    app.run()
