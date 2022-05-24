@@ -3,18 +3,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Javascript -->
     <script src="{{url_for('static', filename='javascript/htmx.min.js')}}"></script>
 </head>
 
-<body>
-<h3>Thanks But No.</h3>
-<main>
-    <h1>It's time to improve the way we learn, work and live.</h1>
-    <section>
+<body class="preload-transitions">
+<h3 class="title animate__animated animate__fadeInDown animate__slow animate__delay-1s">Thanks But No.</h3>
+<main class="">
+    
+    <h1>{{ questions | random }}</h1>
+   
+    <section class="animate__animated animate__fadeInUp animate__slow">
         <p>For thousands of years, countless generations have given their blood, sweat and tears for us to live our happy and comfortable lives. From the artists who struggled to beautify our existence, to the scientists who gave their lives for the truth. From the thinkers who weren't afraid to speak their minds, to the fools who dared to try. From leaders who took matters into their own hands, to all those brave enough to conquer life. From the warriors to the peace seekers; the dreamers and the skeptics; the idealists and the realists; the living and the dead. We could never put into words how grateful we are, we'll start by saying this: Thank you.</p>
         <p>
             As noble a virtue as gratitude is, just as important is the ability to politely decline. That's what these giants of the past did: they refused to follow the norm; they refused to keep quiet; they refused to bow down; they refused the status quo; they refused to give up on their dreams. The best way to show them gratitude, is not by words, but by following their footsteps. So, to all those who want to keep things as they are: we politely decline. To all those unwilling to find a better way: we politely decline. To all those upholding outdated norms: we politely decline. And finally, to all those who want to keep relying on obsolete systems that were created a long time ago: Thanks, but no. 

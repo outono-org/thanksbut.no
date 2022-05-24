@@ -6,9 +6,11 @@
 
 body {
   max-width: 1200px;
-  margin: 40px 40px;
+  margin: 40px auto;
   font-family: var(--primary-font);
   background-color: #f5f5f8;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
 .fade-me-out.htmx-swapping {
@@ -24,14 +26,33 @@ body {
   transition: opacity 1s ease-out;
 }
 
+.animate {
+  animation: fadeIn;
+  animation-duration: 2s;
+}
+
+.preload-transitions * {
+  transition: none !important;
+}
+
 main {
   margin: 50px auto;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 h1 {
   font-weight: 800;
-  line-height: 95%;
+  font-size: 80px;
+  margin: 120px 0px;
+  line-height: 1em;
+}
+
+p {
+  font-size: 28px;
+}
+
+section {
+  max-width: 800px;
 }
 
 /* Start of Subscribe Form */
