@@ -55,12 +55,26 @@ section {
   max-width: 800px;
 }
 
+.title {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.subscribe input[type="submit"]:hover {
+  transform: scale(1.04);
+}
+
 /* Start of Subscribe Form */
 
 .subscribe {
-  background-color: #efeff2;
+  background-color: #0e0066;
   padding: 40px;
   border-radius: 8px;
+}
+
+.subscribe-heading {
+  color: #fff;
+  margin-top: 0;
 }
 
 input {
@@ -79,10 +93,14 @@ input {
 
 .subscribe input[type="submit"] {
   background-color: var(--secondary-color);
-  color: #000;
+  color: #0e0066;
   font-weight: 800;
   width: 30%;
   cursor: pointer;
 }
 
 /* End of Subscribe Form */
+
+footer {
+  margin-top: 50px;
+}
