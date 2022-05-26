@@ -183,4 +183,8 @@ footer {
     flex-direction: row;
     gap: 20px;
   }
+  .twitter-wall {
+    flex-direction: column;
+    gap: 0px;
+  }
 }
