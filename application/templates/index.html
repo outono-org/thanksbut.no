@@ -1,50 +1,31 @@
-<head>
-    <title>Thanks But No</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Javascript -->
-    <script src="{{url_for('static', filename='javascript/htmx.min.js')}}"></script>
-</head>
+{% extends "layout.html" %}
 
-<body class="preload-transitions">
-    <a class="title animate__animated animate__fadeInDown animate__slow animate__delay-1s" href="{{ url_for('home') }}"><h3>Thanks But No.</h3></a>
-    
-    <main class="">
+{% block main %}
+<main>
     
     <h1>{{ questions | random }}</h1>
    
-    <section class="animate__animated animate__fadeInUp animate__slow">
-        <p>For thousands of years, countless generations have given their blood, sweat and tears for us to live our happy and comfortable lives. From the artists who struggled to beautify our existence, to the scientists who gave their lives for the truth. From the thinkers who weren't afraid to speak their minds, to the fools who dared to try. From leaders who took matters into their own hands, to all those brave enough to conquer life. From the warriors to the peace seekers; the dreamers and the skeptics; the idealists and the realists; the living and the dead. We could never put into words how grateful we are, we'll start by saying this: Thank you.</p>
+    <section class="animate__animated animate__fadeIn animate__slow">
+        <p>For thousands of years, countless generations have given their blood, sweat and tears for us to live our happy and comfortable lives.</p>
         <p>
-            As noble a virtue as gratitude is, just as important is the ability to politely decline. That's what these giants of the past did: they refused to follow the norm; they refused to keep quiet; they refused to bow down; they refused the status quo; they refused to give up on their dreams. The best way to show them gratitude, is not by words, but by following their footsteps. So, to all those who want to keep things as they are: we politely decline. To all those unwilling to find a better way: we politely decline. To all those upholding outdated norms: we politely decline. And finally, to all those who want to keep relying on obsolete systems that were created a long time ago: Thanks, but no. 
+            From the artists who struggled to beautify our existence, to the scientists who gave their lives for the truth. From the thinkers who weren't afraid to speak their minds, to the fools who dared to try. From leaders who took matters into their own hands, to all those brave enough to conquer life. From the warriors to the peace seekers. The dreamers and the skeptics. The idealists and the realists. The living and the dead.
+        </p>
+        <p>We could never put into words how grateful we are, we'll start by saying this: Thank you.</p>
+        <p>
+            As noble a virtue as gratitude is, just as important is the ability to politely decline. That's what these giants of the past did: They refused to follow the norm. They refused to keep quiet. They refused to bow down. They refused the status quo. They refused to give up on their dreams.
+        </p>
+        <p>
+            The best way to show them gratitude is not by using words, but by following their footsteps. So, to all those who want to keep things as they are: We politely decline. To all those unwilling to find a better way: We politely decline. To all those upholding outdated norms: We politely decline. And finally, to all those who want to keep relying on obsolete systems that were created a long time ago: Thanks, but no. 
         </p>
     </section>
 </main>
 
-<!-- TODO: Replace form with WTForms -->
-
-<section class="subscribe">
-    <h2 class="subscribe-heading">We're building a conference and community for young makers who want to build the future.</h2>
-    <form id="subscribe" class="fade-me-out" method="POST" hx-post="/subscribe" hx-target="#subscribe" hx-swap="outerHTML swap:1s">
-        {{ form.hidden_tag() }}
-        {{ form.email(autocomplete="off", placeholder="Your email") }}
-        {{ form.submit(class="") }}
-    </form>
-</section>
-
-<footer>
-    <a href="https://twitter.com/thanksbutnooooo" target="_blank">
-        <svg class="social" xmlns="http://www.w3.org/2000/svg" width="39" height="32" viewBox="0 0 39 32">
-            <path class="colorize" fill="#FFF" fill-rule="evenodd" d="M38.843 3.78c-1.43.64-2.965 1.074-4.577 1.27 1.645-.998 2.908-2.578 3.503-4.46-1.54.924-3.25 1.594-5.06 1.956C31.25.98 29.18 0 26.89 0c-4.4 0-7.968 3.61-7.968 8.062 0 .632.07 1.247.206 1.837-6.618-.34-12.49-3.55-16.42-8.43-.687 1.19-1.08 2.57-1.08 4.05 0 2.794 1.407 5.262 3.545 6.71-1.306-.04-2.535-.406-3.61-1.01v.1c0 3.906 2.747 7.164 6.392 7.905-.668.184-1.372.282-2.1.282-.513 0-1.01-.05-1.5-.146 1.016 3.204 3.958 5.535 7.446 5.6-2.73 2.163-6.16 3.45-9.9 3.45-.64 0-1.27-.037-1.9-.11 3.53 2.287 7.72 3.62 12.22 3.62 14.66 0 22.67-12.283 22.67-22.937 0-.35-.01-.697-.02-1.043 1.56-1.135 2.91-2.554 3.98-4.17"></path>
-        </svg>
-    </a>
-</footer>
-</body>
+    <section class="subscribe">
+        <h2 class="subscribe-heading">We're building a conference and community for young makers who want to build the future.</h2>
+        <form id="subscribe" class="fade-me-out" method="POST" hx-post="/subscribe" hx-target="#subscribe" hx-swap="outerHTML swap:1s">
+            {{ form.hidden_tag() }}
+            {{ form.email(autocomplete="off", placeholder="Your email") }}
+            {{ form.submit(class="") }}
+        </form>
+    </section>
+    {% endblock %}

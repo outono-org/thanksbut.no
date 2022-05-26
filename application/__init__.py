@@ -39,15 +39,15 @@ db = Config.mongo.db
 def home():
     form = SubscribeForm()
     questions = [
-        "What if we didn't have to work anymore to afford living?",
+        "What if we didn't have to work to afford living?",
         "What if there were new and more engaging ways of expressing ourselves?",
         "What if schools let kids follow their own curiosity and learning path?",
         "What if women didn't have to carry a baby in their womb?",
-        "What if we were able to live for 200 years?",
-        "What if we were able to provide clean and affordable energy for everyone?",
+        "What if could live for 200 years?",
+        "What if we could provide clean and affordable energy for everyone?",
         "What if we could communicate with anyone fluently without having to learn another language?",
-        "What if there were more meaningful ways of connecting and getting to know people?",
-        "What if we were able to get from Tokyo to Madrid in 4 hours?",
+        "What if we could connect in more meaningful ways?",
+        "What if we could get from Tokyo to Madrid in 4 hours?",
         "What if we could make any drink from our kitchen?",
         "What if we could breathe underwater without any equipment?",
         "What if we could make beautiful cities again?",
@@ -55,6 +55,11 @@ def home():
     ]
 
     return render_template('index.html', form=form, questions=questions)
+
+
+@app.get("/who")
+def who():
+    return render_template('who.html')
 
 
 @app.post("/subscribe")
