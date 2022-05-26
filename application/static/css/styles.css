@@ -49,8 +49,17 @@ body {
   letter-spacing: 0.05rem;
 }
 
-.navigation > a:hover {
+.navigation-items > a:hover {
   text-decoration: underline;
+}
+
+.navigation-items {
+  display: flex;
+  gap: 20px;
+}
+
+.navigation-items a {
+  color: #ffffff;
 }
 
 main {
@@ -58,7 +67,7 @@ main {
   font-size: 30px;
 }
 
-h1 {
+.main-heading {
   font-weight: 800;
   font-size: 70px;
   margin: 120px 0px;
@@ -71,7 +80,11 @@ p {
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: #fb9ceb;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 section {
@@ -148,17 +161,26 @@ footer {
   color: #ffffff;
 }
 
+.twitter-wall {
+  display: flex;
+  gap: 20px;
+}
+
 /* Start of Mobile */
 
 @media (max-width: 600px) {
   body {
     margin: 20px 20px;
   }
-  h1 {
+  .main-heading {
     font-size: 40px;
     margin: 20px 0px;
   }
   main {
     font-size: 18px;
+  }
+  .navigation-items {
+    flex-direction: row;
+    gap: 20px;
   }
 }

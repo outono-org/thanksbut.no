@@ -62,6 +62,11 @@ def who():
     return render_template('who.html')
 
 
+@app.get("/wall")
+def wall():
+    return render_template('wall.html')
+
+
 @app.post("/subscribe")
 def subscribe():
     form = SubscribeForm()
