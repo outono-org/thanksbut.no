@@ -21,7 +21,7 @@
 </main>
 
     <section class="subscribe">
-        <h2 class="subscribe-heading">We're building a conference and community for young makers who want to build the future.</h2>
+        <h2 class="subscribe-heading">We're building a new, offline conference and community for young makers who want to build the future.</h2>
         <form id="subscribe" class="fade-me-out" method="POST" hx-post="/subscribe" hx-target="#subscribe" hx-swap="outerHTML swap:1s">
             {{ form.hidden_tag() }}
             {{ form.email(autocomplete="off", placeholder="Your email") }}
