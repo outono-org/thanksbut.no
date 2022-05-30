@@ -3,9 +3,9 @@
 {% block main %}
 <main>
     
-    <h1 class="main-heading">{{ questions | random }}</h1>
+    <h1 class="main-heading">We refuse to wait around for someone to come and build the future for us.</h1>
    
-    <section class="animate__animated animate__fadeIn animate__slow">
+    <section class="main-text animate__animated animate__fadeIn animate__slow">
         <p>For thousands of years, countless generations have given their blood, sweat and tears for us to live our happy and comfortable lives.</p>
         <p>
             From the artists who struggled to beautify our existence, to the scientists who gave their lives for the truth. From the thinkers who weren't afraid to speak their minds, to the fools who dared to try. From leaders who took matters into their own hands, to all those brave enough to conquer life. From the warriors to the peace seekers. The dreamers and the skeptics. The idealists and the realists. The living and the dead.
@@ -18,10 +18,23 @@
             The best way to show them gratitude is not by using words, but by following their footsteps. So, to all those who want to keep things as they are: We politely decline. To all those unwilling to find a better way: We politely decline. To all those upholding outdated norms: We politely decline. And finally, to all those who want to keep relying on obsolete systems that were created a long time ago: Thanks, but no. 
         </p>
     </section>
+
+    <section class="wi-cards animate__animated animate__fadeIn animate__slow">
+        {% for question in questions %}
+        <div class="card">
+            {{ question }}
+        </div>
+        {% endfor %}
+        <div class="card">
+            What If _________________ _________________ ?
+        </div>
+    </section>
 </main>
 
-    <section class="subscribe">
-        <h2 class="subscribe-heading">We're building a new, offline conference and community for young makers who want to build the future.</h2>
+    
+
+    <section class="floating subscribe">
+        <h2 class="subscribe-heading">We're building a community and offline event for the young makers and creators who want to improve society.</h2>
         <form id="subscribe" class="fade-me-out" method="POST" hx-post="/subscribe" hx-target="#subscribe" hx-swap="outerHTML swap:1s">
             {{ form.hidden_tag() }}
             {{ form.email(autocomplete="off", placeholder="Your email") }}

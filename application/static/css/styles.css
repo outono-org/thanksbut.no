@@ -4,6 +4,10 @@
   --primary-font: "DM Sans", sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   max-width: 1200px;
   margin: 40px 40px;
@@ -87,7 +91,7 @@ a:hover {
   text-decoration: underline;
 }
 
-section {
+.main-text {
   max-width: 800px;
 }
 
@@ -145,13 +149,14 @@ input {
 footer {
   margin-top: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 .line {
   background-color: #fb9ceb;
   height: 4px;
-  border-radius: 40%;
+  border-radius: 80px;
   margin-top: 20px;
   width: 100%;
 }
@@ -164,6 +169,27 @@ footer {
 .twitter-wall {
   display: flex;
   gap: 20px;
+}
+
+.wi-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  border: 3px solid white;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.card:hover {
+  cursor: pointer;
 }
 
 /* Start of Mobile */
@@ -186,5 +212,25 @@ footer {
   .twitter-wall {
     flex-direction: column;
     gap: 0px;
+  }
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
   }
 }
