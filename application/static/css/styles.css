@@ -168,7 +168,12 @@ footer {
 
 .twitter-wall {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.twitter-tweet.twitter-tweet-rendered {
+  max-width: 450px !important;
 }
 
 .wi-cards {
